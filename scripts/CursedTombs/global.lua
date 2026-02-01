@@ -9,13 +9,18 @@ local sectionChecks = storage.globalSection("SettingsCursedTombs_checks")
 local sectionRevenants = storage.globalSection("SettingsCursedTombs_revenants")
 local sectionOther = storage.globalSection("SettingsCursedTombs_other")
 local triggeredContainers = {}
+local activatedContainers = {}
 
 local function onSave()
-    return triggeredContainers
+    return {
+        triggeredContainers = triggeredContainers,
+        activatedContainers = activatedContainers,
+    }
 end
 
 local function onLoad(saveData)
-    triggeredContainers = saveData
+    triggeredContainers = saveData.triggeredContainers
+    activatedContainers = saveData.activatedContainers
 end
 
 local function cursableContainer(obj)
@@ -47,6 +52,14 @@ local function attributeCheckSucceeded(actor)
     return math.random(100) <= safeChance
 end
 
+local function clearActivatedContainers(cellId)
+    for recordedCellId, _ in pairs(activatedContainers) do
+        if recordedCellId ~= cellId then
+            activatedContainers[recordedCellId] = nil
+        end
+    end
+end
+
 local function triggerCurse(actor)
     local revenantList = sectionRevenants:get("useLeveledLists")
         and LeveledRevenants or StaticRevenants
@@ -68,14 +81,22 @@ end
 
 local function onContainerActive(obj, actor)
     if triggeredContainers[obj.id]
+        or (
+            activatedContainers[obj.cell.id]
+            and activatedContainers[obj.cell.id][obj.id]
+        )
         or not cursableContainer(obj)
         or obj.type.isLocked(obj)
         or hasKey(obj, actor)
         or attributeCheckSucceeded(actor)
     then
+        activatedContainers[obj.cell.id][obj.id] = true
         return
     end
 
+    clearActivatedContainers(actor.cell.id)
+
+    activatedContainers[obj.cell.id][obj.id] = true
     triggeredContainers[obj.id] = true
 
     local revenantCount = math.random(sectionRevenants:get("maxRevenantCount"))
