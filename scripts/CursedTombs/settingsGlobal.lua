@@ -54,7 +54,6 @@ I.Settings.registerGroup {
         {
             key = 'minRevenantCount',
             name = 'minRevenantCount_name',
-            description = 'minRevenantCount_desc',
             renderer = 'number',
             default = 1,
             min = 1,
@@ -62,7 +61,6 @@ I.Settings.registerGroup {
         {
             key = 'maxRevenantCount',
             name = 'maxRevenantCount_name',
-            description = 'maxRevenantCount_desc',
             renderer = 'number',
             default = 3,
             min = 1,
