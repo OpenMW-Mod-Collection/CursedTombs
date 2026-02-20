@@ -47,12 +47,22 @@ I.Settings.registerGroup {
         {
             key = 'useLeveledLists',
             name = 'useLeveledLists_name',
+            description = 'useLeveledLists_desc',
             renderer = 'checkbox',
             default = false,
         },
         {
+            key = 'minRevenantCount',
+            name = 'minRevenantCount_name',
+            description = 'minRevenantCount_desc',
+            renderer = 'number',
+            default = 1,
+            min = 1,
+        },
+        {
             key = 'maxRevenantCount',
             name = 'maxRevenantCount_name',
+            description = 'maxRevenantCount_desc',
             renderer = 'number',
             default = 3,
             min = 1,

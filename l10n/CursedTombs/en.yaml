@@ -1,5 +1,24 @@
 page_name: Cursed Tombs
-page_description: Enemies will target the player instead of their followers.
+page_description: >
+  Interacting with tomb/barrow/etc containers
+  now will have a chance to summon undead revenants behind you.
 
-settings_groupName: Settings
-ignoreSummons_name: Enemies Ignore Summons
+checks_groupName: Checks
+hecks_groupDesc: |
+  Formula for getting cursed is:
+
+  random(minBase, maxBase) + Luck * LuckMod + Agility * AgilityMod
+minBaseSafeChance_name: Min Base Safe Chance
+maxBaseSafeChance_name: Max Base Safe Chance
+luckModifier_name: Luck Modifier
+agilityModifier_name: Agility Modifier
+
+revenants_groupName: Revenants
+useLeveledLists_name: Use Leveled Lists
+useLeveledLists_desc: Leveled lists will make early game less punishing.
+minRevenantCount_name: Min Revenant Count
+maxRevenantCount_name: Max Revenant Count
+
+other_groupName: Other
+enableMessages_name: Enable Messages
+enableSfx_name: Enable SFX

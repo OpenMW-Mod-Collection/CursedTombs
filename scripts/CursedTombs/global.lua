@@ -99,7 +99,10 @@ local function onContainerActive(obj, actor)
     activatedContainers[obj.cell.id][obj.id] = true
     triggeredContainers[obj.id] = true
 
-    local revenantCount = math.random(sectionRevenants:get("maxRevenantCount"))
+    local revenantCount = math.random(
+        sectionRevenants:get("minRevenantCount"),
+        sectionRevenants:get("maxRevenantCount")
+    )
     for _ = 1, revenantCount do
         triggerCurse(actor)
     end
@@ -115,3 +118,49 @@ return {
         onLoad = onLoad,
     },
 }
+
+-- This is what we have, you would want something like this, except you'd want
+-- function getCameraVector()
+--     local yaw = camera.getYaw()
+--     local pitch = camera.getPitch()
+--     local cosPitch = math.cos(pitch)
+--     local sinPitch = math.sin(pitch)
+--     local cosYaw = math.cos(yaw)
+--     local sinYaw = math.sin(yaw)
+
+--     return v3(
+--         sinYaw * cosPitch,
+--         cosYaw * cosPitch,
+--         -sinPitch
+--     ):normalize()
+-- end
+
+-- local position = object.position
+-- local nearestPlayer
+-- local shortestDistance = math.huge
+-- for _, player in pairs(cell:getAll(types.Player)) do
+--     if not nearestPlayer then
+--         nearestPlayer = player
+--         shortestDistance = (player.position - position):length()
+--     elseif (player.position - position):length() < shortestDistance then
+--         nearestPlayer = player
+--         shortestDistance = (player.position - position):length()
+--     end
+-- end
+-- if nearestPlayer then
+--     local yaw = nearestPlayer.rotation:getYaw()
+--     local dir = v3(
+--         math.sin(yaw),
+--         math.cos(yaw),
+--         0
+--     ):normalize()
+--     position = nearestPlayer.position + dir * 100         -- v3(0,0,2)
+-- end
+
+-- local rotation = object.rotation
+-- object:remove()
+-- local tent = world.createObject("sd_campingobject_tent", 1)
+-- tent:teleport(cell, position, {
+--     rotation = rotation,
+--     onGround = true
+-- })
