@@ -41,6 +41,7 @@ local function onContainerActive(obj, actor)
     local reventats = GetRevenants(obj)
 
     if not reventats
+        or IsCity(obj)
         or obj.type.isLocked(obj)
         or HasKey(obj, actor)
         or GotLucky(actor)

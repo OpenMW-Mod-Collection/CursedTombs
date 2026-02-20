@@ -28,3 +28,7 @@ function HasKey(obj, actor)
     local inv = actor.type.inventory(actor)
     return inv:find(keyRecord.id) ~= nil
 end
+
+function IsCity(obj)
+    return obj.cell:hasTag("NoSleep")
+end
