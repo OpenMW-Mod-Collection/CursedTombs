@@ -1,10 +1,41 @@
+msg_remnantSpawned_1: Cold shiver goes down your spine.
+msg_remnantSpawned_2: A cold shiver runs down your spine.
+msg_remnantSpawned_3: The air grows heavy with damp decay.
+msg_remnantSpawned_4: An unseen presence presses against your thoughts.
+msg_remnantSpawned_5: The silence deepens into something watchful.
+msg_remnantSpawned_6: A breath not your own brushes your neck.
+msg_remnantSpawned_7: The smell of old earth thickens around you.
+msg_remnantSpawned_8: Darkness gathers where no shadow should be.
+msg_remnantSpawned_9: A chill settles into your bones.
+msg_remnantSpawned_10: The stillness turns hostile.
+msg_remnantSpawned_11: Something stirs beyond mortal sight.
+msg_remnantSpawned_12: Ancient resentment seeps into the air.
+msg_remnantSpawned_13: Your heartbeat echoes too loudly.
+msg_remnantSpawned_14: A whisper of dust coils at your feet.
+msg_remnantSpawned_15: The air trembles with unrest.
+msg_remnantSpawned_16: An invisible gaze fixes upon you.
+msg_remnantSpawned_17: The ground beneath you seems to pulse.
+msg_remnantSpawned_18: A sense of dread fills the air.
+msg_remnantSpawned_19: '"The grave suffers no trespass."'
+msg_remnantSpawned_20: '"This rest was earned in death."'
+msg_remnantSpawned_21: '"Dust remembers."'
+msg_remnantSpawned_22: '"Breath offends the dead."'
+msg_remnantSpawned_23: '"The dead do not forgive."'
+msg_remnantSpawned_24: '"We remember..."'
+msg_remnantSpawned_25: '"Stillness... broken..."'
+msg_remnantSpawned_26: '"Rest... denied..."'
+msg_remnantSpawned_27: '"Cold... answers..."'
+msg_remnantSpawned_28: '"No warmth... no mercy..."'
+msg_remnantSpawned_29: '"Silence demands... silence..."'
+
+
 page_name: Cursed Tombs
 page_description: >
   Interacting with tomb/barrow/etc containers
   now will have a chance to summon undead revenants behind you.
 
 checks_groupName: Checks
-hecks_groupDesc: |
+checks_groupDesc: |
   Formula for getting cursed is:
 
   random(minBase, maxBase) + Luck * LuckMod + Agility * AgilityMod
