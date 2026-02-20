@@ -21,6 +21,7 @@ Compatible with any mods, unless:
 
 Supported mods:
 
+- [QuickLoot](https://www.nexusmods.com/morrowind/mods/54950) by ownlyme
 - [Tamriel_Data](https://www.nexusmods.com/morrowind/mods/44537) by Project Tamriel Team
 - [OAAB_Data](https://www.nexusmods.com/morrowind/mods/49042) by OAAB Data Team
 

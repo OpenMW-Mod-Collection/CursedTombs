@@ -61,4 +61,9 @@ return {
         onSave = onSave,
         onLoad = onLoad,
     },
+    eventHandlers = {
+        CursedTombs_activatedContainer = function(eventData)
+            onContainerActive(eventData.obj, eventData.actor)
+        end,
+    }
 }
