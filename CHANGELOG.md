@@ -1,5 +1,11 @@
 # Cursed Tombs (OpenMW)
 
+## 1.2
+
+## Features
+
+- Revenants no longer spawn inside the walls and objects
+
 ## 1.1
 
 ### Features

@@ -33,10 +33,10 @@ local function onContainerActive(obj, actor)
         return
     end
 
-    if not activatedContainers[obj.cell.id] then
-        activatedContainers[obj.cell.id] = { [obj.id] = true}
-    else
+    if activatedContainers[obj.cell.id] then
         activatedContainers[obj.cell.id][obj.id] = true
+    else
+        activatedContainers[obj.cell.id] = { [obj.id] = true }
     end
     local reventats = GetRevenants(obj)
 
@@ -51,7 +51,7 @@ local function onContainerActive(obj, actor)
 
     flushActivatedContainers(actor.cell.id)
     triggeredContainers[obj.id] = true
-    TriggerCurse(reventats, actor)
+    actor:sendEvent("CursedTombs_initCurse", reventats)
 end
 
 I.Activation.addHandlerForType(types.Container, onContainerActive)
@@ -65,5 +65,8 @@ return {
         CursedTombs_activatedContainer = function(eventData)
             onContainerActive(eventData.obj, eventData.actor)
         end,
+        CursedTombs_triggerCurse = function(eventData)
+            TriggerCurse(eventData.revenants, eventData.actor, eventData.spawnPos)
+        end
     }
 }

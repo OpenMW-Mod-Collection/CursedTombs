@@ -29,4 +29,5 @@ Supported mods:
 
 **Sosnoviy Bor** - Author  
 **inpv** - Creation of [Sepulchral Curses](https://www.nexusmods.com/morrowind/mods/48332) which inspired this mod  
-**hyacinth and ownlyme** - Code for spawning things behind the player
+**hyacinth and ownlyme** - Code for spawning things behind the player  
+**Foxunder** - Code for spawn location validation
