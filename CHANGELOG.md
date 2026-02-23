@@ -2,7 +2,7 @@
 
 ## 1.2
 
-## Features
+### Features
 
 - Revenants no longer spawn inside the walls and objects
 
