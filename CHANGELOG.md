@@ -1,5 +1,15 @@
 # Cursed Tombs (OpenMW)
 
+## 1.2.1
+
+### Features
+
+- Added spawn distance setting
+
+### Fixes
+
+- Fixed revenants trying to spawn in front of the player instead of behind him
+
 ## 1.2
 
 ### Features

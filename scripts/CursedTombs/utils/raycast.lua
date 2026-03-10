@@ -3,29 +3,31 @@
 local util = require("openmw.util")
 local nearby = require("openmw.nearby")
 
-local SPAWN_DIST     = 200
 local SPAWN_Z_OFFSET = 50
 local GROUND_CHECK_Z = 200
 
-function FindSafeSpawnPos(actor)
-    local forward = actor.rotation:apply(util.vector3(0, 1, 0))
+function FindSafeSpawnPos(actor, distance)
+    local backward = actor.rotation:apply(util.vector3(0, -1, 0))
     local right   = actor.rotation:apply(util.vector3(1, 0, 0))
 
     local candidateDirs = {
-        forward,
-        forward + right * 0.4,
-        forward - right * 0.4,
-        forward + right * 0.8,
-        forward - right * 0.8,
+        backward,
+        backward + right * 0.4,
+        backward - right * 0.4,
+        backward + right * 0.8,
+        backward - right * 0.8,
     }
 
     for _, dir in ipairs(candidateDirs) do
-        local candidate = actor.position + dir:normalize() * SPAWN_DIST
+        local candidate = actor.position + dir:normalize() * distance
 
         local wallCheck = nearby.castRay(
             actor.position + util.vector3(0, 0, 60),
             candidate      + util.vector3(0, 0, 60),
-            { collisionType = nearby.COLLISION_TYPE.World, ignore = { actor } }
+            {
+                collisionType = nearby.COLLISION_TYPE.World,
+                ignore = { actor }
+            }
         )
 
         if not wallCheck.hit then

@@ -45,6 +45,13 @@ I.Settings.registerGroup {
     order = 2,
     settings = {
         {
+            key = 'spawnDistance',
+            name = 'spawnDistance_name',
+            renderer = 'number',
+            default = 300,
+            min = 0,
+        },
+        {
             key = 'useLeveledLists',
             name = 'useLeveledLists_name',
             description = 'useLeveledLists_desc',

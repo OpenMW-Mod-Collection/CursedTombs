@@ -1,14 +1,17 @@
 local self = require("openmw.self")
 local core = require("openmw.core")
 local types = require("openmw.types")
+local storage = require("openmw.storage")
 
 require("scripts.CursedTombs.utils.raycast")
+
+local sectionRevenants = storage.globalSection("SettingsCursedTombs_revenants")
 
 local function initCurse(reventants)
     core.sendGlobalEvent("CursedTombs_triggerCurse", {
         revenants = reventants,
         actor = self,
-        spawnPos = FindSafeSpawnPos(self)
+        spawnPos = FindSafeSpawnPos(self, sectionRevenants:get("spawnDistance"))
     })
 end
 
@@ -20,7 +23,7 @@ local function quickLoot_lootedItems(eventData)
     core.sendGlobalEvent("CursedTombs_activatedContainer", {
         obj = obj,
         actor = self,
-        spawnPos = FindSafeSpawnPos(self)
+        spawnPos = FindSafeSpawnPos(self, sectionRevenants:get("spawnDistance"))
     })
 end
 

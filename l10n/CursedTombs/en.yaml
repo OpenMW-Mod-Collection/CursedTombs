@@ -45,6 +45,7 @@ luckModifier_name: Luck Modifier
 agilityModifier_name: Agility Modifier
 
 revenants_groupName: Revenants
+spawnDistance_name: Spawn Distance
 useLeveledLists_name: Use Leveled Lists
 useLeveledLists_desc: Leveled lists will make early game less punishing.
 minRevenantCount_name: Min Revenant Count
