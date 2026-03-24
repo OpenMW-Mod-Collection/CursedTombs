@@ -1,5 +1,11 @@
 # Cursed Tombs (OpenMW)
 
+## 1.2.2
+
+### Fixes
+
+- Fixed PTR containers not being cursed enough
+
 ## 1.2.1
 
 ### Features

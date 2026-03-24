@@ -25,6 +25,10 @@ Supported mods:
 - [Tamriel_Data](https://www.nexusmods.com/morrowind/mods/44537) by Project Tamriel Team
 - [OAAB_Data](https://www.nexusmods.com/morrowind/mods/49042) by OAAB Data Team
 
+## Complimentary Mods
+
+- [Luamics](https://dreamweave-mp.github.io/S3ctors-S3cret-St4sh/luamics/) by S3ctor
+
 ## Credits
 
 **Sosnoviy Bor** - Author  

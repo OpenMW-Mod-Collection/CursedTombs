@@ -1,5 +1,7 @@
 local core = require("openmw.core")
 
+-- captalization is irrelevant
+
 local revenants = {
     velothi = {
         static = {
@@ -93,7 +95,7 @@ end
 
 function GetRevenants(obj)
     for pattern, revenantList in pairs(cursedContainers) do
-        if string.find(obj.recordId, pattern) then
+        if string.find(obj.recordId, pattern:lower()) then
             return revenantList[math.random(#revenantList)]
         end
     end
